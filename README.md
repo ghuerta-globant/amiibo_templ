@@ -30,3 +30,8 @@ Requires: generate-css, generate-templates
 ```
 go run .
 ```
+
+## run and listen to changes
+```
+templ generate --watch --proxy="http://localhost:8080" --cmd="go run ."
+```
