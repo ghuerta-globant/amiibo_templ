@@ -3,7 +3,7 @@ package handler
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -41,7 +41,7 @@ func GetData() []Amiibo {
 
 	defer response.Body.Close()
 
-	responseBody, err := ioutil.ReadAll(response.Body)
+	responseBody, err := io.ReadAll(response.Body)
 	if err != nil {
 		fmt.Printf("Failed to read response body: %s\n", err)
 		return []Amiibo{}
